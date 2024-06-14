@@ -2,6 +2,16 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
+import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
+
+storyblokInit({
+  accessToken: process.env.storyblokApiToken,
+  use: [apiPlugin],
+  apiOptions: {
+    region: "us",
+  },
+});
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
